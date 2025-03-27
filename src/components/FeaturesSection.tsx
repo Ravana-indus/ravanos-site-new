@@ -5,7 +5,7 @@ import { Bot, Users, MessageSquare, Globe, Terminal, Eye } from 'lucide-react';
 const features = [
   {
     id: 'agents',
-    section: 'hero', // Link to HeroSection component
+    section: 'agents', // Updated to match the id of our new AssistSection
     icon: <Bot className="w-8 h-8 text-ravan-purple" />,
     title: 'Assist, Agent, Comms',
     description: "The right AI agent for the right job—whether it's gathering information, performing tasks, or managing customer care.",
