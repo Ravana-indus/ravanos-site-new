@@ -5,6 +5,7 @@ import { Bot, Users, MessageSquare, Globe, Terminal, Eye } from 'lucide-react';
 const features = [
   {
     id: 'agents',
+    section: 'hero', // Link to HeroSection component
     icon: <Bot className="w-8 h-8 text-ravan-purple" />,
     title: 'Assist, Agent, Comms',
     description: "The right AI agent for the right job—whether it's gathering information, performing tasks, or managing customer care.",
@@ -14,6 +15,7 @@ const features = [
   },
   {
     id: 'business',
+    section: 'business', // Link to BusinessSection component
     icon: <Globe className="w-8 h-8 text-ravan-blue" />,
     title: 'Connected Across Your Business',
     description: "Links your business, supply chain, customers, and beyond. AI agents with a complete view of your operations—something the world has never seen before.",
@@ -23,6 +25,7 @@ const features = [
   },
   {
     id: 'control',
+    section: 'control', // Link to ControlSection component
     icon: <Terminal className="w-8 h-8 text-ravan-accent" />,
     title: 'Natural Language & Control',
     description: "No need to learn a system—just talk to it like a colleague and take control whenever you want.",
@@ -32,6 +35,7 @@ const features = [
   },
   {
     id: 'adaptability',
+    section: 'adaptability', // Link to AdaptabilitySection component
     icon: <Users className="w-8 h-8 text-ravan-green" />,
     title: 'Modular Build for Adaptability',
     description: "Designed for easy adoption, with custom domains for different sectors and system customization through simple requests.",
@@ -41,6 +45,7 @@ const features = [
   },
   {
     id: 'privacy',
+    section: 'privacy', // Link to PrivacySection component
     icon: <Eye className="w-8 h-8 text-ravan-purple" />,
     title: 'Open Source for Accountability & Privacy',
     description: "Your business data stays on your premises. Open-sourced, publicly auditable code—built for trust.",
@@ -50,6 +55,7 @@ const features = [
   },
   {
     id: 'communication',
+    section: 'cta', // Link to CTASection component
     icon: <MessageSquare className="w-8 h-8 text-ravan-blue" />,
     title: 'Ready for the AGI Era',
     description: "Built from the ground up with future AI advancements in mind. A platform that grows smarter as AI technology evolves.",
@@ -73,6 +79,9 @@ const FeatureBox = ({ feature, index }: { feature: typeof features[0], index: nu
         </div>
         <h3 className="feature-title">{feature.title}</h3>
         <p className="feature-description">{feature.description}</p>
+        <a href={`#${feature.section}`} className="mt-4 inline-block text-ravan-accent hover:text-ravan-accent-light text-sm font-medium transition-colors">
+          Learn more <span className="ml-1">→</span>
+        </a>
       </div>
     </div>
   );
