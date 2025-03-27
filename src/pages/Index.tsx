@@ -17,12 +17,18 @@ const Index = () => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         
-        const target = document.querySelector(this.getAttribute('href') || '');
+        const targetId = this.getAttribute('href')?.substring(1);
+        if (!targetId) return;
+        
+        const target = document.getElementById(targetId);
         if (target) {
           window.scrollTo({
             top: target.getBoundingClientRect().top + window.scrollY - 100,
             behavior: 'smooth'
           });
+          
+          // Update URL without causing a page reload
+          history.pushState(null, '', `#${targetId}`);
         }
       });
     });
@@ -44,6 +50,9 @@ const Index = () => {
     animatedElements.forEach((el) => observer.observe(el));
     
     return () => {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.removeEventListener('click', function () {});
+      });
       animatedElements.forEach((el) => observer.unobserve(el));
     };
   }, []);
