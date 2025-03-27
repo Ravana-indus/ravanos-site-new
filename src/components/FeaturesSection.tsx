@@ -7,7 +7,7 @@ const features = [
     id: 'agents',
     icon: <Bot className="w-8 h-8 text-ravan-purple" />,
     title: 'Assist, Agent, Comms',
-    description: 'The right AI agent for the right job—whether it's gathering information, performing tasks, or managing customer care.',
+    description: "The right AI agent for the right job—whether it's gathering information, performing tasks, or managing customer care.",
     backgroundColor: 'from-ravan-purple/20 to-ravan-purple/5',
     borderColor: 'ravan-purple/30',
     delay: '0s'
@@ -16,7 +16,7 @@ const features = [
     id: 'business',
     icon: <Globe className="w-8 h-8 text-ravan-blue" />,
     title: 'Connected Across Your Business',
-    description: 'Links your business, supply chain, customers, and beyond. AI agents with a complete view of your operations—something the world has never seen before.',
+    description: "Links your business, supply chain, customers, and beyond. AI agents with a complete view of your operations—something the world has never seen before.",
     backgroundColor: 'from-ravan-blue/20 to-ravan-blue/5',
     borderColor: 'ravan-blue/30',
     delay: '0.1s'
@@ -25,7 +25,7 @@ const features = [
     id: 'control',
     icon: <Terminal className="w-8 h-8 text-ravan-accent" />,
     title: 'Natural Language & Control',
-    description: 'No need to learn a system—just talk to it like a colleague and take control whenever you want.',
+    description: "No need to learn a system—just talk to it like a colleague and take control whenever you want.",
     backgroundColor: 'from-ravan-accent/20 to-ravan-accent/5',
     borderColor: 'ravan-accent/30',
     delay: '0.2s'
@@ -34,7 +34,7 @@ const features = [
     id: 'adaptability',
     icon: <Users className="w-8 h-8 text-ravan-green" />,
     title: 'Modular Build for Adaptability',
-    description: 'Designed for easy adoption, with custom domains for different sectors and system customization through simple requests.',
+    description: "Designed for easy adoption, with custom domains for different sectors and system customization through simple requests.",
     backgroundColor: 'from-ravan-green/20 to-ravan-green/5',
     borderColor: 'ravan-green/30',
     delay: '0.3s'
@@ -43,7 +43,7 @@ const features = [
     id: 'privacy',
     icon: <Eye className="w-8 h-8 text-ravan-purple" />,
     title: 'Open Source for Accountability & Privacy',
-    description: 'Your business data stays on your premises. Open-sourced, publicly auditable code—built for trust.',
+    description: "Your business data stays on your premises. Open-sourced, publicly auditable code—built for trust.",
     backgroundColor: 'from-ravan-purple/20 to-ravan-purple/5',
     borderColor: 'ravan-purple/30',
     delay: '0.4s'
@@ -52,7 +52,7 @@ const features = [
     id: 'communication',
     icon: <MessageSquare className="w-8 h-8 text-ravan-blue" />,
     title: 'Ready for the AGI Era',
-    description: 'Built from the ground up with future AI advancements in mind. A platform that grows smarter as AI technology evolves.',
+    description: "Built from the ground up with future AI advancements in mind. A platform that grows smarter as AI technology evolves.",
     backgroundColor: 'from-ravan-blue/20 to-ravan-blue/5',
     borderColor: 'ravan-blue/30',
     delay: '0.5s'
