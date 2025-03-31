@@ -52,10 +52,10 @@ const UIPresentationSection = () => {
         {/* Section Title */}
         <div className="text-center mb-16 max-w-3xl mx-auto animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Experience the Future of <span className="text-gradient">Computing</span>
+            Experience the Future of <span className="text-gradient">Business Intelligence</span>
           </h2>
           <p className="text-lg md:text-xl text-white/80">
-            An intelligent interface that adapts to your workflow
+            An intelligent interface that works for you!
           </p>
         </div>
 
