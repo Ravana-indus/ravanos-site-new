@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowRight, Check, AlertCircle, Sun, Moon } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Check, AlertCircle } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 const EarlyAdopters = () => {
-  const [theme, setTheme] = useState('dark');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,15 +16,6 @@ const EarlyAdopters = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState('');
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
-  };
-
-  // Apply theme to document body
-  useEffect(() => {
-    document.body.className = theme === 'dark' ? 'bg-ravan-black' : 'bg-gray-50';
-  }, [theme]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -76,63 +66,45 @@ const EarlyAdopters = () => {
   };
 
   return (
-    <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-ravan-black text-white' : 'bg-gray-50 text-gray-900'}`}>
+    <div className="min-h-screen flex flex-col bg-ravan-black text-white">
       <Navbar />
       
-      <div className="fixed top-6 right-6 z-50">
-        <button 
-          onClick={toggleTheme} 
-          className={`rounded-full p-2 ${theme === 'dark' ? 'bg-white/10 text-white hover:bg-white/20' : 'bg-gray-200 text-gray-800 hover:bg-gray-300'}`}
-          aria-label="Toggle theme"
-        >
-          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
-      </div>
-      
       <main className="flex-grow">
-        <section className={`section-padding relative overflow-hidden pt-24 md:pt-32 ${theme === 'dark' ? 'bg-ravan-black' : 'bg-gray-50'}`}>
+        <section className="section-padding relative overflow-hidden pt-24 md:pt-32 bg-ravan-black">
           {/* Background elements */}
           <div className="absolute inset-0 overflow-hidden">
-            <div className={`absolute -top-20 -left-20 w-72 h-72 rounded-full blur-3xl ${theme === 'dark' ? 'bg-ravan-purple/10' : 'bg-ravan-purple/5'}`}></div>
-            <div className={`absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl ${theme === 'dark' ? 'bg-ravan-blue/10' : 'bg-ravan-blue/5'}`}></div>
+            <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full blur-3xl bg-ravan-purple/10"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full blur-3xl bg-ravan-blue/10"></div>
             
             {/* Grid pattern */}
-            <div className={`absolute inset-0 ${theme === 'dark' 
-              ? "bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIj48cGF0aCBkPSJNMCAwaDYwdjYwSDB6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20" 
-              : "bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIHN0cm9rZT0icmdiYSgwLDAsMCwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIj48cGF0aCBkPSJNMCAwaDYwdjYwSDB6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"}`}></div>
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIj48cGF0aCBkPSJNMCAwaDYwdjYwSDB6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"></div>
           </div>
           
           <div className="max-w-4xl mx-auto relative z-10">
             <div className="text-center mb-8 md:mb-12">
-              <div className={`mb-3 inline-block px-4 py-1.5 rounded-full ${theme === 'dark' 
-                ? 'bg-ravan-accent/20 border border-ravan-accent/30' 
-                : 'bg-ravan-accent/10 border border-ravan-accent/20'}`}>
-                <span className={`text-sm font-medium ${theme === 'dark' ? 'text-white' : 'text-ravan-accent'}`}>Exclusive Access</span>
+              <div className="mb-3 inline-block px-4 py-1.5 rounded-full bg-ravan-accent/20 border border-ravan-accent/30">
+                <span className="text-sm font-medium text-white">Exclusive Access</span>
               </div>
-              <h1 className={`section-title mb-4 md:mb-6 ${theme === 'dark' ? '' : 'text-gray-900'}`}>Join the <span className="text-gradient">RavanOS</span> Early Adopter Program</h1>
-              <p className={`section-subtitle mx-auto ${theme === 'dark' ? '' : 'text-gray-600'}`}>
+              <h1 className="section-title mb-4 md:mb-6">Join the <span className="text-gradient">RavanOS</span> Early Adopter Program</h1>
+              <p className="section-subtitle mx-auto">
                 Be among the first to harness the power of the AI Operating System for your business. 
                 Early adopters receive priority access, dedicated support, and influence on our roadmap.
               </p>
             </div>
             
-            <div className={`p-5 sm:p-8 md:p-10 rounded-3xl ${theme === 'dark' 
-              ? 'glass-card border border-white/10 bg-gradient-to-b from-ravan-gray/30 to-transparent backdrop-blur-md' 
-              : 'bg-white border border-gray-200 shadow-lg'}`}>
+            <div className="p-5 sm:p-8 md:p-10 rounded-3xl glass-card border border-white/10 bg-gradient-to-b from-ravan-gray/30 to-transparent backdrop-blur-md">
               {isSubmitted ? (
                 <div className="p-6 md:p-8 text-center">
-                  <div className={`w-16 h-16 mx-auto mb-4 md:mb-6 rounded-full flex items-center justify-center ${theme === 'dark' 
-                    ? 'bg-ravan-accent/20' 
-                    : 'bg-ravan-accent/10'}`}>
+                  <div className="w-16 h-16 mx-auto mb-4 md:mb-6 rounded-full flex items-center justify-center bg-ravan-accent/20">
                     <Check className="w-8 h-8 text-ravan-accent" />
                   </div>
-                  <h2 className={`text-xl md:text-2xl font-semibold mb-3 md:mb-4 ${theme === 'dark' ? '' : 'text-gray-900'}`}>Thank you for your interest!</h2>
-                  <p className={`max-w-md mx-auto mb-6 text-sm md:text-base ${theme === 'dark' ? 'text-white/80' : 'text-gray-600'}`}>
+                  <h2 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">Thank you for your interest!</h2>
+                  <p className="max-w-md mx-auto mb-6 text-sm md:text-base text-white/80">
                     Your application to join the RavanOS Early Adopter Program has been received. Our team will review your submission and reach out to you shortly with next steps.
                   </p>
                   <a 
                     href="/" 
-                    className={`button-secondary inline-flex items-center justify-center gap-2 px-6 py-3 ${theme === 'dark' ? '' : 'bg-gray-200 hover:bg-gray-300 text-gray-800'}`}
+                    className="button-secondary inline-flex items-center justify-center gap-2 px-6 py-3"
                   >
                     Return to Home
                     <ArrowRight size={16} />
@@ -149,7 +121,7 @@ const EarlyAdopters = () => {
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="name" className={`text-sm font-medium block ${theme === 'dark' ? 'text-white/80' : 'text-gray-700'}`}>Full Name</label>
+                      <label htmlFor="name" className="text-sm font-medium block text-white/80">Full Name</label>
                       <input 
                         id="name"
                         type="text" 
@@ -158,14 +130,12 @@ const EarlyAdopters = () => {
                         onChange={handleChange}
                         placeholder="Your name" 
                         required
-                        className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all ${theme === 'dark' 
-                          ? 'bg-white/5 text-white border border-white/10' 
-                          : 'bg-gray-50 text-gray-900 border border-gray-300'}`}
+                        className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all bg-white/5 text-white border border-white/10"
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label htmlFor="email" className={`text-sm font-medium block ${theme === 'dark' ? 'text-white/80' : 'text-gray-700'}`}>Email Address</label>
+                      <label htmlFor="email" className="text-sm font-medium block text-white/80">Email Address</label>
                       <input 
                         id="email"
                         type="email" 
@@ -174,14 +144,12 @@ const EarlyAdopters = () => {
                         onChange={handleChange}
                         placeholder="your.email@company.com" 
                         required
-                        className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all ${theme === 'dark' 
-                          ? 'bg-white/5 text-white border border-white/10' 
-                          : 'bg-gray-50 text-gray-900 border border-gray-300'}`}
+                        className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all bg-white/5 text-white border border-white/10"
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label htmlFor="phone" className={`text-sm font-medium block ${theme === 'dark' ? 'text-white/80' : 'text-gray-700'}`}>Contact Number</label>
+                      <label htmlFor="phone" className="text-sm font-medium block text-white/80">Contact Number</label>
                       <input 
                         id="phone"
                         type="tel" 
@@ -190,14 +158,12 @@ const EarlyAdopters = () => {
                         onChange={handleChange}
                         placeholder="Your phone number" 
                         required
-                        className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all ${theme === 'dark' 
-                          ? 'bg-white/5 text-white border border-white/10' 
-                          : 'bg-gray-50 text-gray-900 border border-gray-300'}`}
+                        className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all bg-white/5 text-white border border-white/10"
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label htmlFor="company" className={`text-sm font-medium block ${theme === 'dark' ? 'text-white/80' : 'text-gray-700'}`}>Company Name</label>
+                      <label htmlFor="company" className="text-sm font-medium block text-white/80">Company Name</label>
                       <input 
                         id="company"
                         type="text" 
@@ -206,14 +172,12 @@ const EarlyAdopters = () => {
                         onChange={handleChange}
                         placeholder="Your company" 
                         required
-                        className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all ${theme === 'dark' 
-                          ? 'bg-white/5 text-white border border-white/10' 
-                          : 'bg-gray-50 text-gray-900 border border-gray-300'}`}
+                        className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all bg-white/5 text-white border border-white/10"
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label htmlFor="role" className={`text-sm font-medium block ${theme === 'dark' ? 'text-white/80' : 'text-gray-700'}`}>Your Role</label>
+                      <label htmlFor="role" className="text-sm font-medium block text-white/80">Your Role</label>
                       <input 
                         id="role"
                         type="text" 
@@ -222,23 +186,19 @@ const EarlyAdopters = () => {
                         onChange={handleChange}
                         placeholder="e.g. CTO, Director of Operations" 
                         required
-                        className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all ${theme === 'dark' 
-                          ? 'bg-white/5 text-white border border-white/10' 
-                          : 'bg-gray-50 text-gray-900 border border-gray-300'}`}
+                        className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all bg-white/5 text-white border border-white/10"
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label htmlFor="employees" className={`text-sm font-medium block ${theme === 'dark' ? 'text-white/80' : 'text-gray-700'}`}>Company Size</label>
+                      <label htmlFor="employees" className="text-sm font-medium block text-white/80">Company Size</label>
                       <select
                         id="employees"
                         name="employees"
                         value={formData.employees}
                         onChange={handleChange}
                         required
-                        className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all appearance-none ${theme === 'dark' 
-                          ? 'bg-white/5 text-white border border-white/10' 
-                          : 'bg-gray-50 text-gray-900 border border-gray-300'}`}
+                        className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all appearance-none bg-white/5 text-white border border-white/10"
                         style={{ backgroundImage: "url('data:image/svg+xml;charset=US-ASCII,<svg width=\"24\" height=\"24\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M8 9l4-4 4 4m0 6l-4 4-4-4\"/></svg>')", backgroundRepeat: "no-repeat", backgroundPosition: "right 1rem center", backgroundSize: "1rem" }}
                       >
                         <option value="" disabled>Select company size</option>
@@ -251,7 +211,7 @@ const EarlyAdopters = () => {
                     </div>
                     
                     <div className="space-y-2 md:col-span-2">
-                      <label htmlFor="useCase" className={`text-sm font-medium block ${theme === 'dark' ? 'text-white/80' : 'text-gray-700'}`}>How do you plan to use RavanOS?</label>
+                      <label htmlFor="useCase" className="text-sm font-medium block text-white/80">How do you plan to use RavanOS?</label>
                       <textarea
                         id="useCase"
                         name="useCase"
@@ -260,9 +220,7 @@ const EarlyAdopters = () => {
                         placeholder="Tell us about your use case and what you hope to achieve with RavanOS"
                         rows={4}
                         required
-                        className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all resize-none ${theme === 'dark' 
-                          ? 'bg-white/5 text-white border border-white/10' 
-                          : 'bg-gray-50 text-gray-900 border border-gray-300'}`}
+                        className="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-ravan-accent/50 transition-all resize-none bg-white/5 text-white border border-white/10"
                       />
                     </div>
                   </div>
@@ -286,34 +244,28 @@ const EarlyAdopters = () => {
             </div>
             
             <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
-              <div className={`p-4 md:p-6 text-center rounded-xl ${theme === 'dark' 
-                ? 'glass-card' 
-                : 'bg-white border border-gray-200 shadow-md'}`}>
+              <div className="p-4 md:p-6 text-center rounded-xl glass-card">
                 <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 md:mb-4 rounded-full bg-ravan-purple/20 flex items-center justify-center">
                   <span className="text-lg md:text-xl font-bold text-ravan-purple">1</span>
                 </div>
-                <h3 className={`text-base md:text-lg font-medium mb-1 md:mb-2 ${theme === 'dark' ? '' : 'text-gray-900'}`}>Priority Access</h3>
-                <p className={`text-xs md:text-sm ${theme === 'dark' ? 'text-white/70' : 'text-gray-600'}`}>Be the first to access RavanOS features and updates before general release.</p>
+                <h3 className="text-base md:text-lg font-medium mb-1 md:mb-2">Priority Access</h3>
+                <p className="text-xs md:text-sm text-white/70">Be the first to access RavanOS features and updates before general release.</p>
               </div>
               
-              <div className={`p-4 md:p-6 text-center rounded-xl ${theme === 'dark' 
-                ? 'glass-card' 
-                : 'bg-white border border-gray-200 shadow-md'}`}>
+              <div className="p-4 md:p-6 text-center rounded-xl glass-card">
                 <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 md:mb-4 rounded-full bg-ravan-blue/20 flex items-center justify-center">
                   <span className="text-lg md:text-xl font-bold text-ravan-blue">2</span>
                 </div>
-                <h3 className={`text-base md:text-lg font-medium mb-1 md:mb-2 ${theme === 'dark' ? '' : 'text-gray-900'}`}>Dedicated Support</h3>
-                <p className={`text-xs md:text-sm ${theme === 'dark' ? 'text-white/70' : 'text-gray-600'}`}>Receive personalized onboarding and direct access to our engineering team.</p>
+                <h3 className="text-base md:text-lg font-medium mb-1 md:mb-2">Dedicated Support</h3>
+                <p className="text-xs md:text-sm text-white/70">Receive personalized onboarding and direct access to our engineering team.</p>
               </div>
               
-              <div className={`p-4 md:p-6 text-center rounded-xl sm:col-span-2 md:col-span-1 ${theme === 'dark' 
-                ? 'glass-card' 
-                : 'bg-white border border-gray-200 shadow-md'}`}>
+              <div className="p-4 md:p-6 text-center rounded-xl sm:col-span-2 md:col-span-1 glass-card">
                 <div className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-3 md:mb-4 rounded-full bg-ravan-accent/20 flex items-center justify-center">
                   <span className="text-lg md:text-xl font-bold text-ravan-accent">3</span>
                 </div>
-                <h3 className={`text-base md:text-lg font-medium mb-1 md:mb-2 ${theme === 'dark' ? '' : 'text-gray-900'}`}>Shape Our Roadmap</h3>
-                <p className={`text-xs md:text-sm ${theme === 'dark' ? 'text-white/70' : 'text-gray-600'}`}>Influence the development of features based on your business needs.</p>
+                <h3 className="text-base md:text-lg font-medium mb-1 md:mb-2">Shape Our Roadmap</h3>
+                <p className="text-xs md:text-sm text-white/70">Influence the development of features based on your business needs.</p>
               </div>
             </div>
           </div>
