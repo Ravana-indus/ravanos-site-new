@@ -102,7 +102,7 @@ const ITSupportSection = () => {
               <div className="relative ml-12 pl-8 border-l border-white/10 py-2">
                 <blockquote className="text-lg italic text-white/80">
                   "The time and resources we've saved have been substantial."
-                  <footer className="text-sm text-white/60 mt-2 non-italic">— Sarah Chen, Operations Director</footer>
+                  <footer className="text-sm text-white/60 mt-2 non-italic">— Wolfram Köhler, Operations Director</footer>
                 </blockquote>
                 <div className="absolute top-0 left-0 w-6 h-6 -translate-x-3 rounded-full bg-ravan-accent/30 border border-ravan-accent"></div>
               </div>

@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -79,7 +78,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				'ravan-black': '#0A0A0A',
+				'ravan-gray': '#1A1A1A',
+				'ravan-dark': '#141414',
+				'ravan-purple': '#7761FF',
+				'ravan-blue': '#61AFFF',
+				'ravan-green': '#61FF8D',
+				'ravan-accent': '#FF61DC',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -125,7 +131,7 @@ export default {
 				},
 				float: {
 					'0%, 100%': { transform: 'translateY(0)' },
-					'50%': { transform: 'translateY(-10px)' }
+					'50%': { transform: 'translateY(-20px)' }
 				},
 				'gradient-shift': {
 					'0%': { backgroundPosition: '0% 50%' },
@@ -136,21 +142,32 @@ export default {
 					'0%': { transform: 'scale(1)' },
 					'50%': { transform: 'scale(1.05)' },
 					'100%': { transform: 'scale(1)' }
+				},
+				'glow-pulse': {
+					'0%, 100%': { 
+						opacity: '0.3',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						opacity: '0.4',
+						transform: 'scale(1.05)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fade-in': 'fade-in 0.7s ease-in-out',
+				'fade-in': 'fade-in 0.6s ease-out forwards',
 				'fade-in-slow': 'fade-in 1.2s ease-in-out',
-				'fade-in-up': 'fade-in-up 0.8s ease-out',
-				'fade-in-up-slow': 'fade-in-up 1.2s ease-out',
-				'slide-in-right': 'slide-in-right 0.8s ease-out',
-				'slide-in-left': 'slide-in-left 0.8s ease-out',
-				'subtle-pulse': 'subtle-pulse 3s ease-in-out infinite',
+				'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
+				'fade-in-up-slow': 'fade-in-up-slow 1s ease-out forwards',
+				'slide-in-right': 'slide-in-right 0.6s ease-out forwards',
+				'slide-in-left': 'slide-in-left 0.6s ease-out forwards',
+				'subtle-pulse': 'subtle-pulse 4s ease-in-out infinite',
 				float: 'float 6s ease-in-out infinite',
-				'gradient-shift': 'gradient-shift 10s ease infinite',
-				scale: 'scale 8s ease-in-out infinite'
+				'gradient-shift': 'gradient-shift 8s ease infinite',
+				scale: 'scale 8s ease-in-out infinite',
+				'glow-pulse': 'glow-pulse 4s ease-in-out infinite',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

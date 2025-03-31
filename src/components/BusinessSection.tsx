@@ -18,7 +18,7 @@ const BusinessSection = () => {
           <div className="flex-1 animate-on-scroll">
             <h2 className="section-title mb-6">Connected Across Your <span className="text-gradient">Entire Business</span></h2>
             <p className="section-subtitle mb-8">
-              Links your business, supply chain, customers, and beyond. AI agents with a complete view of your operations—something the world has never seen before.
+              Links every department inside your business, supply chain, customers, and beyond. AI agents with a complete view of your operations — something the world has never seen before.
             </p>
             
             <div className="space-y-4">

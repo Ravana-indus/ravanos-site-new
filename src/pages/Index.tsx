@@ -10,9 +10,11 @@ import ITSupportSection from '../components/ITSupportSection';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
 import MetaTags from '../components/MetaTags';
+import UIPresentationSection from '../components/UIPresentationSection';
 
 // Memoize sections to prevent unnecessary re-renders
 const MemoizedHeroSection = memo(HeroSection);
+const MemoizedUIPresentationSection = memo(UIPresentationSection);
 const MemoizedAssistSection = memo(AssistSection);
 const MemoizedBusinessSection = memo(BusinessSection);
 const MemoizedControlSection = memo(ControlSection);
@@ -142,6 +144,7 @@ const Index = () => {
       <Navbar />
       <main>
         <MemoizedHeroSection />
+        <MemoizedUIPresentationSection />
         <MemoizedAssistSection />
         <MemoizedBusinessSection />
         <MemoizedControlSection />

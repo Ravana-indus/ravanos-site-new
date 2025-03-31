@@ -97,24 +97,6 @@ const AssistSection = () => {
             </div>
           </div>
         </div>
-
-        {/* UI Presentation Section */}
-        <div className="mt-24 animate-on-scroll animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-          <div className="glass-card p-8 rounded-3xl relative overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-ravan-purple/20 via-ravan-accent/20 to-ravan-blue/20 rounded-full blur-2xl"></div>
-            
-            <div className="relative w-full aspect-video">
-              <div className="absolute inset-0 bg-gradient-to-br from-ravan-purple/30 to-ravan-blue/30 rounded-3xl blur-2xl animate-subtle-pulse"></div>
-              <div className="glass-card relative h-full w-full overflow-hidden rounded-3xl border border-white/10">
-                <img 
-                  src="/ui-img.png" 
-                  alt="RavanOS UI Interface" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

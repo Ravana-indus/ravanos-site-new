@@ -667,18 +667,13 @@ const Features = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" className="button-primary flex items-center justify-center gap-2 text-lg px-8 py-4 bg-gradient-to-r from-ravan-purple to-ravan-accent">
-                  <span>Request a Demo</span>
+                <a href="/early-adopters" className="button-primary flex items-center justify-center gap-2 text-lg px-8 py-4 bg-gradient-to-r from-ravan-purple to-ravan-accent">
+                  <span>Get Early Access</span>
                   <div className="p-1 bg-white/10 rounded-full">
                     <ExternalLink size={18} />
                   </div>
                 </a>
-                <a href="#" className="button-secondary flex items-center justify-center gap-2 text-lg px-8 py-4">
-                  <span>Start Free Trial</span>
-                  <div className="p-1 bg-white/10 rounded-full">
-                    <ArrowRight size={18} />
-                  </div>
-                </a>
+                
               </div>
             </div>
           </div>

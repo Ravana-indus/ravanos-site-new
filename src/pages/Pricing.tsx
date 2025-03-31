@@ -20,14 +20,14 @@ const Pricing = () => {
 
           <div className="max-w-5xl mx-auto relative z-10 text-center">
             <div className="p-10 md:p-16 rounded-3xl animate-fade-in-up">
-              <div className="mb-6 inline-block px-4 py-1.5 rounded-full bg-ravan-accent/20 border border-ravan-accent/30">
+              <div className="mb-4 inline-block px-4 py-1.5 rounded-full bg-ravan-accent/20 border border-ravan-accent/30">
                 <span className="text-sm font-medium text-white">Early Access Program</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-8">
-                Simple, Transparent <span className="text-gradient">Pricing</span>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                Free for <span className="text-gradient">Early Adopters</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed text-center">
-                Choose the plan that best fits your business needs. Join our early adopter program to get exclusive access and special benefits.
+              <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+                Join our early adopter program to get exclusive access and special benefits.
               </p>
             </div>
           </div>

@@ -81,9 +81,9 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-4">
           <div className="flex space-x-6">
-            <Link to="/" className="nav-link">Home</Link>
-            <Link to="/features" className="nav-link">Features</Link>
             <Link to="/pricing" className="nav-link">Pricing</Link>
+
+            <Link to="/features" className="nav-link">Features</Link>
             <Link to="/it-support" className="nav-link">IT Support</Link>
             <Link to="/contact" className="nav-link">Contact</Link>
           </div>
@@ -109,14 +109,15 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`md:hidden fixed inset-0 top-[57px] bg-ravan-black/90 backdrop-blur-md z-40 transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-        <div className="flex flex-col space-y-4 px-6 py-6 max-h-[calc(100vh-57px)] overflow-y-auto">
-          <Link to="/" className="nav-link text-lg py-3" onClick={() => setIsMenuOpen(false)}>Home</Link>
-          <Link to="/features" className="nav-link text-lg py-3" onClick={() => setIsMenuOpen(false)}>Features</Link>
+      <div className={`md:hidden fixed inset-0 top-[57px] bg-ravan-black z-[100] transition-all duration-300 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+        <div className="flex flex-col space-y-4 px-6 py-6 max-h-[calc(100vh-57px)] overflow-y-auto bg-ravan-black">
           <Link to="/pricing" className="nav-link text-lg py-3" onClick={() => setIsMenuOpen(false)}>Pricing</Link>
+
+          <Link to="/features" className="nav-link text-lg py-3" onClick={() => setIsMenuOpen(false)}>Features</Link>
+          <Link to="/it-support" className="nav-link text-lg py-3" onClick={() => setIsMenuOpen(false)}>IT Support</Link>
+
           <Link to="/about" className="nav-link text-lg py-3" onClick={() => setIsMenuOpen(false)}>About</Link>
           <Link to="/contact" className="nav-link text-lg py-3" onClick={() => setIsMenuOpen(false)}>Contact</Link>
-          <Link to="/it-support" className="nav-link text-lg py-3" onClick={() => setIsMenuOpen(false)}>IT Support</Link>
           <div className="pt-4 space-y-4">
             <Link to="/login" className="text-white hover:text-gray-300 p-2 rounded-full hover:bg-white/10 transition-colors flex items-center space-x-2" onClick={() => setIsMenuOpen(false)}>
               <LogIn size={20} />

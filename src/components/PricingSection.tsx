@@ -35,18 +35,20 @@ const PricingSection = () => {
                 <div className="text-gray-400 text-sm">Public Launch</div>
               </div>
             </div>
-            <h3 className="text-2xl font-bold mb-4">Starter</h3>
-            <div className="text-4xl font-bold mb-4 blur-sm">$XX</div>
-            <p className="text-gray-400 mb-6">Perfect for small businesses</p>
-            <ul className="space-y-4 mb-8">
-              {features.slice(0, 4).map((feature, index) => (
-                <li key={index} className="flex items-center gap-2">
-                  <Check className="text-ravan-accent" size={18} />
-                  <span className="text-gray-300">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <button className="w-full button-secondary opacity-50 cursor-not-allowed">Select Plan</button>
+            <div className="blur-sm">
+              <h3 className="text-2xl font-bold mb-4">Starter</h3>
+              <div className="text-4xl font-bold mb-4">$XX</div>
+              <p className="text-gray-400 mb-6">Perfect for small businesses</p>
+              <ul className="space-y-4 mb-8">
+                {features.slice(0, 4).map((feature, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <Check className="text-ravan-accent" size={18} />
+                    <span className="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <button className="w-full button-secondary opacity-50 cursor-not-allowed">Select Plan</button>
+            </div>
           </div>
 
           {/* Pro Plan */}
@@ -57,18 +59,20 @@ const PricingSection = () => {
                 <div className="text-gray-400 text-sm">Public Launch</div>
               </div>
             </div>
-            <h3 className="text-2xl font-bold mb-4">Pro</h3>
-            <div className="text-4xl font-bold mb-4 blur-sm">$XXX</div>
-            <p className="text-gray-400 mb-6">Ideal for growing companies</p>
-            <ul className="space-y-4 mb-8">
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-center gap-2">
-                  <Check className="text-ravan-accent" size={18} />
-                  <span className="text-gray-300">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <button className="w-full button-secondary opacity-50 cursor-not-allowed">Select Plan</button>
+            <div className="blur-sm">
+              <h3 className="text-2xl font-bold mb-4">Pro</h3>
+              <div className="text-4xl font-bold mb-4">$XXX</div>
+              <p className="text-gray-400 mb-6">Ideal for growing companies</p>
+              <ul className="space-y-4 mb-8">
+                {features.map((feature, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <Check className="text-ravan-accent" size={18} />
+                    <span className="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <button className="w-full button-secondary opacity-50 cursor-not-allowed">Select Plan</button>
+            </div>
           </div>
 
           {/* Enterprise Plan */}
@@ -79,18 +83,20 @@ const PricingSection = () => {
                 <div className="text-gray-400 text-sm">Public Launch</div>
               </div>
             </div>
-            <h3 className="text-2xl font-bold mb-4">Enterprise</h3>
-            <div className="text-4xl font-bold mb-4 blur-sm">Custom</div>
-            <p className="text-gray-400 mb-6">For large organizations</p>
-            <ul className="space-y-4 mb-8">
-              {features.map((feature, index) => (
-                <li key={index} className="flex items-center gap-2">
-                  <Check className="text-ravan-accent" size={18} />
-                  <span className="text-gray-300">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <button className="w-full button-secondary opacity-50 cursor-not-allowed">Contact Sales</button>
+            <div className="blur-sm">
+              <h3 className="text-2xl font-bold mb-4">Enterprise</h3>
+              <div className="text-4xl font-bold mb-4">Custom</div>
+              <p className="text-gray-400 mb-6">For large organizations</p>
+              <ul className="space-y-4 mb-8">
+                {features.map((feature, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <Check className="text-ravan-accent" size={18} />
+                    <span className="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <button className="w-full button-secondary opacity-50 cursor-not-allowed">Contact Sales</button>
+            </div>
           </div>
         </div>
 

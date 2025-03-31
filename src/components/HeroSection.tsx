@@ -51,7 +51,7 @@ const HeroSection = () => {
             <div>
               <div className="inline-block mb-4">
                 <span className="py-1 px-3 text-xs font-medium text-white/90 rounded-full bg-ravan-accent/20 border border-ravan-accent/30">
-                  Designed in Germany 🇩🇪, Build in Sri Lanka 🇱🇰 and Canada 🇨🇦
+                  Designed in Germany 🇩🇪, Build in Sri Lanka 🇱🇰
                 </span>
               </div>
               <h1 className="section-title">
@@ -70,8 +70,8 @@ const HeroSection = () => {
                 Get Started
                 <ArrowRight size={16} />
               </a>
-              <a href="#agents" className="button-secondary flex items-center justify-center gap-2">
-                Explore Capabilities
+              <a href="/features" className="button-secondary flex items-center justify-center gap-2">
+                Explore Features
               </a>
             </div>
             

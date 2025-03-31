@@ -31,9 +31,9 @@ const PrivacySection = () => {
                     <div className="glass-card p-4 rounded-xl">
                       <div className="flex items-center space-x-3 mb-2">
                         <Lock className="h-5 w-5 text-ravan-accent" />
-                        <h4 className="text-white font-medium">On-Premises Deployment</h4>
+                        <h4 className="text-white font-medium">Cloud / On-Premises Deployment</h4>
                       </div>
-                      <p className="text-white/70 text-sm">Your data never leaves your secure environment. RavanOS can be fully deployed within your existing infrastructure.</p>
+                      <p className="text-white/70 text-sm">Your data never leaves secure environment. RavanOS can be fully deployed within your existing infrastructure.</p>
                     </div>
                     
                     <div className="glass-card p-4 rounded-xl">
@@ -76,7 +76,7 @@ const PrivacySection = () => {
             <div className="animate-fade-in-up">
               <h2 className="section-title mb-6">Open Source for <span className="text-gradient">Accountability & Privacy</span></h2>
               <p className="section-subtitle mb-8">
-                Your business data stays on your premises. Open-sourced, publicly auditable code built for trust. Ready for the AGI Era with uncompromising security.
+                Your business data stays where you want it. Open-sourced, publicly auditable code built for trust. Ready for the AGI Era with uncompromising security.
               </p>
               
               <div className="mt-12 space-y-6">
