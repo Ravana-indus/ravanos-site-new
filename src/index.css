@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -94,10 +93,36 @@
 
   body {
     @apply bg-ravan-black text-foreground font-sans antialiased;
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+  }
+
+  /* Keep Space Mono for code blocks and monospace text */
+  code, pre, .monospace {
+    font-family: 'Space Mono', monospace;
+  }
+
+  /* Keep Inter for specific elements that should use sans-serif */
+  .font-sans {
+    font-family: 'Inter', sans-serif;
   }
 
   html, body, #root {
     @apply min-h-screen w-full overflow-x-hidden scroll-smooth;
+  }
+
+  /* Improved focus styles for better accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ravan-accent ring-offset-2 ring-offset-ravan-black;
   }
 
   /* Custom scrollbar styling */
@@ -129,6 +154,7 @@
 
   .nav-link {
     @apply text-white/80 hover:text-white transition-all relative px-2 py-1;
+    font-weight: 600;
   }
 
   .nav-link::after {
@@ -141,7 +167,7 @@
   }
 
   .section-padding {
-    @apply py-20 px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32;
+    @apply py-16 sm:py-20 px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 2xl:px-32;
   }
 
   .content-container {
@@ -149,30 +175,182 @@
   }
 
   .button-primary {
-    @apply bg-ravan-accent text-white px-6 py-3 rounded-full font-medium hover:bg-ravan-accent-light transition-all duration-300 shadow-accent hover:shadow-accent-hover focus:outline-none focus:ring-2 focus:ring-ravan-accent focus:ring-offset-2 focus:ring-offset-ravan-dark;
+    @apply relative px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium text-white transition-all duration-300 inline-flex items-center justify-center;
+    background: linear-gradient(135deg, #7C3AED 0%, #2563EB 100%);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    font-weight: 600;
+  }
+
+  .button-primary:hover {
+    @apply transform -translate-y-0.5;
+    background: linear-gradient(135deg, #6D28D9 0%, #1D4ED8 100%);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+  }
+
+  .button-primary:active {
+    @apply transform translate-y-0;
+    box-shadow: 0 2px 10px rgba(124, 58, 237, 0.3);
+  }
+
+  .button-primary:focus {
+    @apply outline-none ring-2 ring-ravan-accent ring-offset-2 ring-offset-ravan-dark;
+  }
+
+  .button-primary:disabled {
+    @apply opacity-50 cursor-not-allowed transform-none;
+    box-shadow: none;
   }
 
   .button-secondary {
-    @apply bg-ravan-gray text-white px-6 py-3 rounded-full font-medium hover:bg-ravan-lightgray transition-all duration-300 border border-white/10 hover:border-white/20 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-ravan-dark;
+    @apply bg-ravan-gray text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full font-medium hover:bg-ravan-lightgray transition-all duration-300 border border-white/10 hover:border-white/20 focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-ravan-dark inline-flex items-center justify-center;
+    font-weight: 600;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight text-white leading-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tight text-white leading-tight;
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 900;
   }
   
   .section-subtitle {
-    @apply text-xl md:text-2xl text-white/70 mt-4 max-w-3xl font-light leading-relaxed;
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 mt-3 sm:mt-4 max-w-3xl leading-relaxed;
+    font-weight: 600;
   }
 
   .feature-title {
-    @apply text-xl md:text-2xl font-display font-semibold text-white mb-2;
+    @apply text-lg sm:text-xl md:text-2xl text-white mb-2;
+    font-family: 'Commissioner', sans-serif;
+    font-weight: 700;
   }
 
   .feature-description {
-    @apply text-white/70 leading-relaxed;
+    @apply text-sm sm:text-base text-white/70 leading-relaxed;
+    font-weight: 500;
   }
   
   .text-gradient {
     @apply bg-clip-text text-transparent bg-rainbow-gradient;
+  }
+
+  /* Animation classes */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+  }
+
+  .animate-fade-in-up {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+    will-change: opacity;
+  }
+
+  .animate-fade-in.visible {
+    opacity: 1 !important;
+  }
+
+  .animate-slide-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+  }
+
+  .animate-slide-in-left.visible {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+
+  .animate-slide-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+  }
+
+  .animate-slide-in-right.visible {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-subtle-pulse {
+    animation: subtle-pulse 3s ease-in-out infinite;
+  }
+
+  /* Optimize animations for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll,
+    .animate-fade-in,
+    .animate-slide-in-left,
+    .animate-slide-in-right,
+    .animate-float,
+    .animate-subtle-pulse {
+      transition: none !important;
+      animation: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  }
+
+  /* Ensure data-lov-id elements are always visible */
+  [data-lov-id] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Responsive typography - adjust for very small screens */
+@media screen and (max-width: 360px) {
+  .section-title {
+    @apply text-xl;
+  }
+  
+  .section-subtitle {
+    @apply text-sm;
+  }
+  
+  .feature-title {
+    @apply text-base;
+  }
+  
+  .feature-description {
+    @apply text-xs;
+  }
+  
+  .button-primary, .button-secondary {
+    @apply text-sm px-3 py-2;
+  }
+}
+
+/* Improved print styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+  
+  .button-primary, .button-secondary {
+    @apply border border-black text-black bg-transparent;
+  }
+  
+  .section-title, .feature-title {
+    @apply text-black;
+  }
+  
+  .section-subtitle, .feature-description {
+    @apply text-gray-800;
+  }
+  
+  .glass-card {
+    @apply bg-white border border-gray-300;
   }
 }

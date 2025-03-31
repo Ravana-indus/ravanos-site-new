@@ -1,31 +1,7 @@
-
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { CheckCircle } from 'lucide-react';
 
 const BusinessSection = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-up');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
-    const elements = document.querySelectorAll('.observe-animation');
-    elements.forEach((el) => observer.observe(el));
-    
-    return () => {
-      elements.forEach((el) => observer.unobserve(el));
-    };
-  }, []);
-
   return (
     <section id="business" className="section-padding bg-ravan-black relative overflow-hidden">
       {/* Background elements */}
@@ -38,8 +14,8 @@ const BusinessSection = () => {
       </div>
       
       <div className="content-container relative z-10">
-        <div ref={containerRef} className="flex flex-col lg:flex-row gap-16 items-center">
-          <div className="flex-1 observe-animation opacity-0">
+        <div className="flex flex-col lg:flex-row gap-16 items-center">
+          <div className="flex-1 animate-on-scroll">
             <h2 className="section-title mb-6">Connected Across Your <span className="text-gradient">Entire Business</span></h2>
             <p className="section-subtitle mb-8">
               Links your business, supply chain, customers, and beyond. AI agents with a complete view of your operations—something the world has never seen before.
@@ -61,7 +37,7 @@ const BusinessSection = () => {
             </div>
           </div>
           
-          <div className="flex-1 observe-animation opacity-0">
+          <div className="flex-1 animate-fade-in animate-fade-in-up visible" data-lov-id="src/components/BusinessSection.tsx:30:4" style={{opacity: '1 !important', transform: 'translateY(0) !important'}}>
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-ravan-purple/30 to-ravan-blue/30 rounded-3xl blur-xl animate-subtle-pulse"></div>
               <div className="glass-card relative rounded-3xl border border-white/10 overflow-hidden shadow-accent">

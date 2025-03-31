@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { Shield, Lock, Code, Cpu } from 'lucide-react';
 
 const PrivacySection = () => {
   return (
-    <section id="privacy" className="section-padding bg-ravan-dark relative overflow-hidden">
+    <section id="privacy" className="section-padding bg-ravan-black relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 -left-40 w-96 h-96 bg-ravan-blue/5 rounded-full blur-3xl"></div>
@@ -77,7 +76,7 @@ const PrivacySection = () => {
             <div className="animate-fade-in-up">
               <h2 className="section-title mb-6">Open Source for <span className="text-gradient">Accountability & Privacy</span></h2>
               <p className="section-subtitle mb-8">
-                Your business data stays on your premises. Open-sourced, publicly auditable code—built for trust. Ready for the AGI Era with uncompromising security.
+                Your business data stays on your premises. Open-sourced, publicly auditable code built for trust. Ready for the AGI Era with uncompromising security.
               </p>
               
               <div className="mt-12 space-y-6">

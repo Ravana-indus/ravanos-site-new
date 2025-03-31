@@ -1,6 +1,6 @@
-
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, Bot, Cpu, Server } from 'lucide-react';
+import ravanosLogo from '../RavanOS_Logo_wt.png';
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -32,7 +32,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center section-padding pt-32 md:pt-24 overflow-hidden" style={{ 
+    <section ref={heroRef} className="relative min-h-screen flex items-center section-padding pt-32 md:pt-24 overflow-hidden bg-ravan-black" style={{ 
       backgroundImage: 'radial-gradient(circle at calc(var(--mouse-x, 0.5) * 100%) calc(var(--mouse-y, 0.5) * 100%), rgba(119, 97, 255, 0.15), transparent 40%)',
     }}>
       {/* Background Elements */}
@@ -51,11 +51,11 @@ const HeroSection = () => {
             <div>
               <div className="inline-block mb-4">
                 <span className="py-1 px-3 text-xs font-medium text-white/90 rounded-full bg-ravan-accent/20 border border-ravan-accent/30">
-                  Now Available for Businesses
+                  Designed in Germany 🇩🇪, Build in Sri Lanka 🇱🇰 and Canada 🇨🇦
                 </span>
               </div>
               <h1 className="section-title">
-                <span className="text-gradient">RavanOS</span> <br />
+                <img src={ravanosLogo} alt="RavanOS Logo" className="h-15" /> <br />
                 The AI Operating System <br />
                 for Your Business
               </h1>
@@ -70,8 +70,8 @@ const HeroSection = () => {
                 Get Started
                 <ArrowRight size={16} />
               </a>
-              <a href="#features" className="button-secondary flex items-center justify-center gap-2">
-                Explore Features
+              <a href="#agents" className="button-secondary flex items-center justify-center gap-2">
+                Explore Capabilities
               </a>
             </div>
             

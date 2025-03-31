@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Command, VolumeX, Volume2, Cpu } from 'lucide-react';
 
@@ -17,7 +16,7 @@ const CommandCard = ({ title, command, result, delay }: { title: string, command
 
 const ControlSection = () => {
   return (
-    <section id="control" className="section-padding bg-ravan-dark relative overflow-hidden">
+    <section id="control" className="section-padding bg-ravan-black relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-40 -left-40 w-96 h-96 bg-ravan-accent/5 rounded-full blur-3xl"></div>
@@ -62,7 +61,7 @@ const ControlSection = () => {
             <div className="animate-fade-in-up">
               <h2 className="section-title mb-6">Natural Language & <span className="text-gradient">Complete Control</span></h2>
               <p className="section-subtitle mb-8">
-                No need to learn a system—just talk to it like a colleague and take control whenever you want. RavanOS understands your intent and executes complex operations through simple conversations.
+                No need to learn a system, just talk to it like a colleague and take control whenever you want. RavanOS understands your intent and executes complex operations through simple conversations.
               </p>
               
               <div className="flex flex-col space-y-8 mt-12">
