@@ -151,7 +151,7 @@ const Index = () => {
         <MemoizedAdaptabilitySection />
         <MemoizedPrivacySection />
         <MemoizedITSupportSection />
-        <MemoizedCTASection />
+        {/* <MemoizedCTASection /> */}
       </main>
       <MemoizedFooter />
     </div>
