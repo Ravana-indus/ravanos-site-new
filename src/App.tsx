@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import ScrollToTop from "./components/ScrollToTop";
 import { Suspense, lazy } from "react";
+import ErrorBoundary from "@/components/ErrorBoundary";
 
 // Lazy load all pages
 const Index = lazy(() => import("./pages/Index"));
@@ -20,6 +21,8 @@ const Contact = lazy(() => import("./pages/Contact"));
 const ITSupport = lazy(() => import("./pages/ITSupport"));
 const Features = lazy(() => import("./pages/Features"));
 const Pricing = lazy(() => import("./pages/Pricing"));
+const NewPricing = lazy(() => import("./pages/NewPricing"));
+
 
 // Loading component
 const LoadingFallback = () => (
@@ -57,7 +60,12 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/it-support" element={<ITSupport />} />
               <Route path="/features" element={<Features />} />
-              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/pricing" element={<NewPricing />} />
+              {/* <Route path="/new-pricing" element={
+                <ErrorBoundary>
+                  <NewPricing />
+                </ErrorBoundary>
+              } /> */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

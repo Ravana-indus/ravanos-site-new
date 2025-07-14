@@ -119,7 +119,7 @@ const Navbar = () => {
         <button
           className="md:hidden text-white p-1 focus:outline-none focus:ring-2 focus:ring-white/20 rounded-md"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-expanded={isMenuOpen}
+          aria-expanded={isMenuOpen ? "true" : "false"}
           aria-label="Toggle navigation menu"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -139,6 +139,27 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             Pricing
+          </Link>
+          <Link
+            to="/new-pricing"
+            className="nav-link text-lg py-3"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            New Pricing
+          </Link>
+          <Link
+            to="/new-pricing"
+            className="nav-link text-lg py-3"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            New Pricing
+          </Link>
+          <Link
+            to="/new-pricing"
+            className="nav-link text-lg py-3"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            New Pricing
           </Link>
 
           <Link

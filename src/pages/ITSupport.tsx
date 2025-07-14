@@ -18,6 +18,7 @@ import {
   TableCell,
 } from "@/components/ui/table";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import ManagedITPricing from "@/components/pricing/ManagedITPricing";
 
 const ITSupport = () => {
   return (
@@ -195,7 +196,7 @@ const ITSupport = () => {
         {/* Subscription Plans */}
         <section
           id="plans"
-          className="section-padding bg-ravan-black relative overflow-hidden"
+          className="section-padding bg-[#0B0C1B] relative overflow-hidden"
         >
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="text-center mb-16">
@@ -207,114 +208,45 @@ const ITSupport = () => {
                 we offer flexible support options
               </p>
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-              {[
+            <ManagedITPricing
+              title=""
+              description=""
+              tiers={[
                 {
-                  name: "Essential",
-                  description: "Small businesses with basic IT needs",
+                  title: "IT Essential",
+                  subtitle: "Reliable daily support",
+                  price: "LKR 20k – 45k",
                   features: [
-                    "Mon-Fri support",
-                    "Remote assistance",
-                    "Monthly check-ins",
-                    "Email & chat support",
-                    "RavanOS updates",
+                    "Business Hours Remote Helpdesk",
+                    "Managed Antivirus & Workstation Backup",
                   ],
                 },
                 {
-                  name: "Professional",
-                  description: "Medium businesses with diverse IT requirements",
+                  title: "IT Business",
+                  subtitle: "Proactive IT management",
+                  price: "LKR 75k – 150k",
                   features: [
-                    "24/5 support",
-                    "Remote & on-site assistance",
-                    "Weekly check-ins",
-                    "Priority email & chat",
-                    "Phone support",
-                    "Network monitoring",
-                    "Security assessments",
+                    "Extended Hours Helpdesk + 2 On-site Visits",
+                    "Advanced Endpoint Security",
                   ],
-                  highlight: true,
+                  isPopular: true,
                 },
                 {
-                  name: "Enterprise",
-                  description:
-                    "Organizations where technology is mission-critical",
+                  title: "IT Enterprise",
+                  subtitle: "Strategic, 24/7 IT oversight",
+                  price: "LKR 200,000+",
                   features: [
-                    "24/7 support",
-                    "Priority response",
-                    "Dedicated team",
-                    "Strategic planning",
-                    "Unlimited on-site visits",
-                    "Hardware procurement",
-                    "Executive reporting",
-                    "Disaster recovery planning",
+                    "24/7/365 Helpdesk + 4+ On-site Visits",
+                    "vCIO Strategic Guidance",
                   ],
                 },
-              ].map((plan, index) => (
-                <div
-                  key={index}
-                  className={`relative rounded-3xl group transition-all duration-300 ${
-                    plan.highlight
-                      ? "transform hover:-translate-y-2"
-                      : "hover:-translate-y-1"
-                  }`}
-                >
-                  {plan.highlight && (
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-ravan-purple to-ravan-accent rounded-3xl blur-sm opacity-70 group-hover:opacity-100 transition-opacity"></div>
-                  )}
-                  <div
-                    className={`h-full glass-card p-8 rounded-3xl relative z-10 flex flex-col ${
-                      plan.highlight
-                        ? "bg-gradient-to-b from-ravan-gray/40 to-ravan-gray/20 border-white/20"
-                        : ""
-                    }`}
-                  >
-                    {plan.highlight && (
-                      <div className="absolute z-1000 top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-ravan-purple to-ravan-accent px-4 py-1 rounded-full text-white text-sm font-medium">
-                        Popular Choice
-                      </div>
-                    )}
-
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      {plan.name}
-                    </h3>
-                    <p className="text-white/70 mb-6">{plan.description}</p>
-
-                    <div className="flex-grow space-y-3 mb-8">
-                      {plan.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <div className="p-1 rounded-full bg-green-500/20 flex-shrink-0 mt-0.5">
-                            <Check className="h-3 w-3 text-green-400" />
-                          </div>
-                          <span className="text-white/80 text-sm">
-                            {feature}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="mt-auto">
-                      <a
-                        href="#"
-                        className={`w-full flex items-center justify-center gap-2 py-3 px-6 rounded-full font-medium transition-all ${
-                          plan.highlight
-                            ? "bg-gradient-to-r from-ravan-purple to-ravan-accent text-white hover:shadow-lg hover:shadow-ravan-accent/20"
-                            : "bg-ravan-gray text-white hover:bg-ravan-lightgray border border-white/10 hover:border-white/20"
-                        }`}
-                      >
-                        <span>Get Started</span>
-                        <ArrowRight size={16} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+              ]}
+            />
           </div>
         </section>
 
         {/* Call To Action */}
-        <section className="section-padding bg-ravan-black relative overflow-hidden">
+        <section className="section-padding bg-[#0B0C1B] relative overflow-hidden">
           <div className="max-w-5xl mx-auto relative z-10 text-center">
             <div className="glass-card p-10 md:p-16 rounded-3xl border border-white/10 bg-gradient-to-b from-ravan-gray/30 to-transparent backdrop-blur-md">
               <h2 className="section-title mb-6">
