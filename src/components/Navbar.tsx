@@ -102,13 +102,13 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="flex items-center space-x-4">
-            <Link
+            {/* <Link
               to="/login"
               className="text-white hover:text-gray-300 p-2 rounded-full hover:bg-white/10 transition-colors"
               title="Login"
             >
               <LogIn size={20} />
-            </Link>
+            </Link> */}
             <Link to="/early-adopters" className="button-primary">
               Talk with us
             </Link>

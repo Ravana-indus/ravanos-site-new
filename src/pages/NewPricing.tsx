@@ -764,11 +764,11 @@ const NewPricing = () => {
               <span className="text-purple-400 mx-2">&#8226;</span> Built in Sri
               Lanka
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 tracking-tight text-white">
               The AI Operating System <br /> for{" "}
               <span className="gradient-text">Your Business</span>
             </h1>
-            <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-400">
+            <p className="max-w-3xl mx-auto text-base sm:text-lg md:text-xl text-gray-400">
               A seamless fusion of AI agents and a superior business management
               platform. Transform how your business operates with intelligent
               automation.
@@ -777,10 +777,10 @@ const NewPricing = () => {
 
           <section id="erp" className="mb-16 md:mb-24 scroll-mt-20">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                 Pillar 1: RavanOS ERP Platform
               </h2>
-              <p className="max-w-2xl mx-auto text-gray-400 mt-2">
+              <p className="max-w-2xl mx-auto text-gray-400 mt-2 text-sm sm:text-base">
                 The powerful, flexible core for your business operations. Our
                 pricing is simple: a one-time implementation fee and a
                 predictable monthly platform fee.
@@ -788,26 +788,28 @@ const NewPricing = () => {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="plan-card bg-[#111324] rounded-xl shadow-sm border border-gray-800 p-8 flex flex-col">
-                <h3 className="text-2xl font-bold text-purple-400">
+                <h3 className="text-xl sm:text-2xl font-bold text-purple-400">
                   ERP Essential
                 </h3>
-                <p className="text-gray-400 mb-6">Up to 15 Employees</p>
+                <p className="text-gray-400 mb-6 text-sm sm:text-base">
+                  Up to 15 Employees
+                </p>
                 <div className="mb-6">
                   <p className="text-gray-300 font-medium">
                     Upfront Implementation
                   </p>
-                  <p className="text-2xl font-bold text-white">
+                  <p className="text-xl sm:text-2xl font-bold text-white">
                     Starts at LKR 100k
                   </p>
                   <p className="text-gray-300 font-medium mt-2">
                     Monthly Platform Fee
                   </p>
-                  <p className="text-lg font-bold text-purple-400">
+                  <p className="text-base sm:text-lg font-bold text-purple-400">
                     Starting at LKR 35k/month
                   </p>
                 </div>
                 <ul className="space-y-3 text-gray-300 mt-auto">
-                  <li className="flex items-start">
+                  <li className="flex items-start text-sm sm:text-base">
                     <span className="text-purple-400 mr-2 mt-1">&#10004;</span>
                     Includes Core Modules
                   </li>
@@ -821,26 +823,28 @@ const NewPricing = () => {
                 <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 gradient-bg text-white text-xs font-bold px-3 py-1 rounded-full">
                   POPULAR
                 </div>
-                <h3 className="text-2xl font-bold text-purple-400">
+                <h3 className="text-xl sm:text-2xl font-bold text-purple-400">
                   ERP Business
                 </h3>
-                <p className="text-gray-400 mb-6">Up to 30 Employees</p>
+                <p className="text-gray-400 mb-6 text-sm sm:text-base">
+                  Up to 30 Employees
+                </p>
                 <div className="mb-6">
                   <p className="text-gray-300 font-medium">
                     Upfront Implementation
                   </p>
-                  <p className="text-2xl font-bold text-white">
+                  <p className="text-xl sm:text-2xl font-bold text-white">
                     Starts at LKR 350k
                   </p>
                   <p className="text-gray-300 font-medium mt-2">
                     Monthly Platform Fee
                   </p>
-                  <p className="text-lg font-bold text-purple-400">
+                  <p className="text-base sm:text-lg font-bold text-purple-400">
                     Starting at LKR 129k/month
                   </p>
                 </div>
                 <ul className="space-y-3 text-gray-300 mt-auto">
-                  <li className="flex items-start">
+                  <li className="flex items-start text-sm sm:text-base">
                     <span className="text-purple-400 mr-2 mt-1">&#10004;</span>
                     Includes Core Modules
                   </li>
@@ -851,24 +855,28 @@ const NewPricing = () => {
                 </ul>
               </div>
               <div className="plan-card bg-[#111324] rounded-xl shadow-sm border border-gray-800 p-8 flex flex-col">
-                <h3 className="text-2xl font-bold text-purple-400">
+                <h3 className="text-xl sm:text-2xl font-bold text-purple-400">
                   ERP Enterprise
                 </h3>
-                <p className="text-gray-400 mb-6">31+ Employees</p>
+                <p className="text-gray-400 mb-6 text-sm sm:text-base">
+                  31+ Employees
+                </p>
                 <div className="mb-6">
                   <p className="text-gray-300 font-medium">
                     Upfront Implementation
                   </p>
-                  <p className="text-2xl font-bold text-white">Custom Quote</p>
+                  <p className="text-xl sm:text-2xl font-bold text-white">
+                    Custom Quote
+                  </p>
                   <p className="text-gray-300 font-medium mt-2">
                     Monthly Platform Fee
                   </p>
-                  <p className="text-lg font-bold text-purple-400">
+                  <p className="text-base sm:text-lg font-bold text-purple-400">
                     Custom Pricing
                   </p>
                 </div>
                 <ul className="space-y-3 text-gray-300 mt-auto">
-                  <li className="flex items-start">
+                  <li className="flex items-start text-sm sm:text-base">
                     <span className="text-purple-400 mr-2 mt-1">&#10004;</span>
                     Fully Tailored Solution
                   </li>
@@ -918,10 +926,10 @@ const NewPricing = () => {
 
           <section id="ai" className="mb-16 md:mb-24 scroll-mt-20">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                 Pillar 3: AI & Automation Services
               </h2>
-              <p className="max-w-2xl mx-auto text-gray-400 mt-2">
+              <p className="max-w-2xl mx-auto text-gray-400 mt-2 text-sm sm:text-base">
                 Leverage artificial intelligence to unlock next-level efficiency
                 and insights. From custom workflows to a natural language
                 assistant for your ERP.
@@ -929,43 +937,43 @@ const NewPricing = () => {
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="plan-card bg-[#111324] rounded-xl shadow-sm border border-gray-800 p-8">
-                <h3 className="text-2xl font-bold text-teal-400">
+                <h3 className="text-xl sm:text-2xl font-bold text-teal-400">
                   AI-Powered Automation
                 </h3>
-                <p className="text-gray-400 mb-4">
+                <p className="text-gray-400 mb-4 text-sm sm:text-base">
                   Custom workflows to automate your unique business processes.
                 </p>
                 <div className="text-left">
-                  <p className="font-semibold text-gray-200">
+                  <p className="font-semibold text-gray-200 text-sm sm:text-base">
                     Automation Consultation & Scoping
                   </p>
-                  <p className="text-2xl font-bold text-white mb-2">
+                  <p className="text-xl sm:text-2xl font-bold text-white mb-2">
                     LKR 75,000{" "}
                     <span className="text-sm font-normal">(One-time)</span>
                   </p>
-                  <p className="font-semibold text-gray-200">
+                  <p className="font-semibold text-gray-200 text-sm sm:text-base">
                     Custom Automation Implementation
                   </p>
-                  <p className="text-2xl font-bold text-white">
+                  <p className="text-xl sm:text-2xl font-bold text-white">
                     Quoted per project
                   </p>
                 </div>
               </div>
               <div className="plan-card bg-[#111324] rounded-xl shadow-sm border border-gray-800 p-8">
-                <h3 className="text-2xl font-bold text-teal-400">
+                <h3 className="text-xl sm:text-2xl font-bold text-teal-400">
                   RavanOS AI Assistant
                 </h3>
-                <p className="text-gray-400 mb-4">
+                <p className="text-gray-400 mb-4 text-sm sm:text-base">
                   Interact with your ERP using natural language.
                 </p>
                 <div className="text-left">
-                  <p className="font-semibold text-gray-200">
+                  <p className="font-semibold text-gray-200 text-sm sm:text-base">
                     One-Time Setup Fee
                   </p>
-                  <p className="text-2xl font-bold text-white mb-2">
+                  <p className="text-xl sm:text-2xl font-bold text-white mb-2">
                     LKR 150,000
                   </p>
-                  <p className="font-semibold text-gray-200">
+                  <p className="font-semibold text-gray-200 text-sm sm:text-base">
                     Monthly Maintenance Fee
                   </p>
                   <p className="text-2xl font-bold text-white">LKR 15,000</p>
@@ -979,36 +987,36 @@ const NewPricing = () => {
             className="bg-[#111324] rounded-2xl p-6 md:p-10 border-2 border-purple-500 shadow-2xl scroll-mt-20"
           >
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
                 Intelligent Cost Estimator
               </h2>
-              <p className="max-w-2xl mx-auto text-gray-400 mt-2">
+              <p className="max-w-2xl mx-auto text-gray-400 mt-2 text-sm sm:text-base">
                 Answer a few questions about your business, and our AI-powered
                 system will recommend the perfect solution and show you exactly
                 how much you'll save.
               </p>
-              <div className="inline-flex items-center mt-4 bg-green-900/30 text-green-300 px-4 py-2 rounded-full text-sm border border-green-500/30">
+              <div className="inline-flex items-center mt-4 bg-green-900/30 text-green-300 px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm border border-green-500/30">
                 <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
                 Intelligent recommendations powered by RavanOS AI
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 md:gap-12">
               <div className="space-y-6">
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-white border-b border-gray-700 pb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-white border-b border-gray-700 pb-2">
                     <span className="inline-flex items-center justify-center w-8 h-8 bg-purple-500 text-white rounded-full text-sm font-bold mr-3">
                       1
                     </span>
                     Tell Us About Your Business
                   </h3>
                   <div>
-                    <label className="font-medium text-gray-300">
+                    <label className="font-medium text-gray-300 text-sm sm:text-base">
                       How many employees do you have?
                     </label>
                     <div
                       id="employee-selection"
-                      className="grid grid-cols-3 gap-3 mt-2"
+                      className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-2"
                     >
                       <input
                         type="radio"
@@ -1022,8 +1030,10 @@ const NewPricing = () => {
                         htmlFor="emp-tier-1"
                         className="p-3 border-2 border-gray-700 rounded-lg cursor-pointer text-center font-semibold transition hover:border-purple-400"
                       >
-                        <div className="text-sm font-bold">0-15</div>
-                        <div className="text-xs text-gray-400">Small Team</div>
+                        <div className="text-xs sm:text-sm font-bold">0-15</div>
+                        <div className="text-xs text-gray-400 whitespace-nowrap">
+                          Small Team
+                        </div>
                       </label>
                       <input
                         type="radio"
@@ -1036,8 +1046,10 @@ const NewPricing = () => {
                         htmlFor="emp-tier-2"
                         className="p-3 border-2 border-gray-700 rounded-lg cursor-pointer text-center font-semibold transition hover:border-purple-400"
                       >
-                        <div className="text-sm font-bold">16-30</div>
-                        <div className="text-xs text-gray-400">
+                        <div className="text-xs sm:text-sm font-bold">
+                          16-30
+                        </div>
+                        <div className="text-xs text-gray-400 whitespace-nowrap">
                           Growing Business
                         </div>
                       </label>
@@ -1052,14 +1064,16 @@ const NewPricing = () => {
                         htmlFor="emp-tier-3"
                         className="p-3 border-2 border-gray-700 rounded-lg cursor-pointer text-center font-semibold transition hover:border-purple-400"
                       >
-                        <div className="text-sm font-bold">31+</div>
-                        <div className="text-xs text-gray-400">Enterprise</div>
+                        <div className="text-xs sm:text-sm font-bold">31+</div>
+                        <div className="text-xs text-gray-400 whitespace-nowrap">
+                          Enterprise
+                        </div>
                       </label>
                     </div>
                   </div>
 
                   <div id="business-type-section" className="space-y-3">
-                    <label className="font-medium text-gray-300">
+                    <label className="font-medium text-gray-300 text-sm sm:text-base">
                       What type of business are you in?
                     </label>
                     <select
@@ -1082,7 +1096,7 @@ const NewPricing = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-white border-b border-gray-700 pb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-white border-b border-gray-700 pb-2">
                     <span className="inline-flex items-center justify-center w-8 h-8 bg-purple-500 text-white rounded-full text-sm font-bold mr-3">
                       2
                     </span>
@@ -1161,7 +1175,7 @@ const NewPricing = () => {
                     </div>
                     <div
                       id="module-selection"
-                      className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-2"
+                      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mt-2"
                     ></div>
                     <p className="text-xs text-gray-500 mt-2">
                       ✨ Smart suggestions based on your business type
@@ -1170,7 +1184,7 @@ const NewPricing = () => {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-white border-b border-gray-700 pb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-white border-b border-gray-700 pb-2">
                     <span className="inline-flex items-center justify-center w-8 h-8 bg-purple-500 text-white rounded-full text-sm font-bold mr-3">
                       3
                     </span>
@@ -1179,7 +1193,7 @@ const NewPricing = () => {
                   <div>
                     <label
                       htmlFor="itServices"
-                      className="font-medium text-gray-300"
+                      className="font-medium text-gray-300 text-sm sm:text-base"
                     >
                       Managed IT Services
                     </label>
@@ -1223,11 +1237,11 @@ const NewPricing = () => {
                       <div className="ml-3">
                         <label
                           htmlFor="aiAssistant"
-                          className="text-gray-300 font-medium"
+                          className="text-gray-300 font-medium text-sm sm:text-base"
                         >
                           Add RavanOS AI Assistant
                         </label>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-gray-500 mt-1">
                           Transform your ERP with natural language commands.
                           "Show me last month's sales" → Instant results!
                         </p>
@@ -1246,11 +1260,11 @@ const NewPricing = () => {
                       <div className="ml-3">
                         <label
                           htmlFor="customSolutions"
-                          className="text-gray-300 font-medium"
+                          className="text-gray-300 font-medium text-sm sm:text-base"
                         >
                           I have unique requirements
                         </label>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-gray-500 mt-1">
                           Custom integrations, complex workflows, or specialized
                           industry needs
                         </p>
@@ -1266,10 +1280,10 @@ const NewPricing = () => {
                 </div>
 
                 <div className="text-center mt-4">
-                  <h3 className="text-xl font-bold text-white">
+                  <h3 className="text-lg sm:text-xl font-bold text-white">
                     Your Intelligent Cost Analysis
                   </h3>
-                  <p className="text-sm text-gray-400 mt-1">
+                  <p className="text-xs sm:text-sm text-gray-400 mt-1">
                     Personalized for your business needs
                   </p>
                 </div>
@@ -1278,10 +1292,13 @@ const NewPricing = () => {
                   id="recommendation-display"
                   className="my-4 bg-purple-900/30 text-purple-300 rounded-md p-3 text-center border border-purple-500/30"
                 >
-                  <p id="recommended-erp" className="font-semibold"></p>
+                  <p
+                    id="recommended-erp"
+                    className="font-semibold text-sm sm:text-base"
+                  ></p>
                   <p
                     id="confidence-score"
-                    className="text-xs mt-1 opacity-80"
+                    className="text-xs mt-1 opacity-80 sm:text-sm"
                   ></p>
                 </div>
 
@@ -1289,8 +1306,10 @@ const NewPricing = () => {
                   id="custom-solution-notice"
                   className="hidden my-4 bg-yellow-900/50 text-yellow-300 rounded-md p-4 text-center border border-yellow-500/30"
                 >
-                  <p className="font-bold">🎯 Custom Solution Required</p>
-                  <p className="text-sm">
+                  <p className="font-bold text-sm sm:text-base">
+                    🎯 Custom Solution Required
+                  </p>
+                  <p className="text-xs sm:text-sm">
                     Your unique needs deserve a tailored approach. Our experts
                     will design the perfect solution for you.
                   </p>
@@ -1300,22 +1319,26 @@ const NewPricing = () => {
                 </div>
 
                 <div id="cost-display">
-                  <div className="grid grid-cols-2 gap-4 my-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
                     <div className="text-center">
-                      <p className="text-gray-400 text-sm">Total Investment</p>
+                      <p className="text-gray-400 text-xs sm:text-sm">
+                        Total Investment
+                      </p>
                       <p
                         id="totalUpfront"
-                        className="text-2xl font-extrabold gradient-text"
+                        className="text-xl sm:text-2xl font-extrabold gradient-text"
                       >
                         LKR 0
                       </p>
                       <p className="text-xs text-gray-500">One-time setup</p>
                     </div>
                     <div className="text-center">
-                      <p className="text-gray-400 text-sm">Monthly Cost</p>
+                      <p className="text-gray-400 text-xs sm:text-sm">
+                        Monthly Cost
+                      </p>
                       <p
                         id="totalMonthly"
-                        className="text-2xl font-extrabold gradient-text"
+                        className="text-xl sm:text-2xl font-extrabold gradient-text"
                       >
                         LKR 0
                       </p>
@@ -1330,14 +1353,14 @@ const NewPricing = () => {
                     className="bg-gradient-to-r from-green-900/50 to-blue-900/50 rounded-lg p-4 my-4 border border-green-500/30"
                   >
                     <div className="text-center">
-                      <p className="text-green-300 font-bold text-sm">
+                      <p className="text-green-300 font-bold text-xs sm:text-sm">
                         💰 Your Savings with RavanOS
                       </p>
-                      <div className="grid grid-cols-2 gap-4 mt-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
                         <div>
                           <p
                             id="monthlySavings"
-                            className="text-lg font-bold text-green-400"
+                            className="text-base sm:text-lg font-bold text-green-400"
                           >
                             LKR 0
                           </p>
@@ -1348,7 +1371,7 @@ const NewPricing = () => {
                         <div>
                           <p
                             id="yearlySavings"
-                            className="text-lg font-bold text-green-400"
+                            className="text-base sm:text-lg font-bold text-green-400"
                           >
                             LKR 0
                           </p>
@@ -1370,13 +1393,13 @@ const NewPricing = () => {
                     id="roi-display"
                     className="bg-blue-900/30 rounded-lg p-3 my-4 border border-blue-500/30"
                   >
-                    <p className="text-blue-300 font-semibold text-sm text-center">
+                    <p className="text-blue-300 font-semibold text-xs sm:text-sm text-center">
                       Return on Investment
                     </p>
                     <div className="text-center mt-2">
                       <p
                         id="roiPercentage"
-                        className="text-xl font-bold text-blue-400"
+                        className="text-lg sm:text-xl font-bold text-blue-400"
                       >
                         0%
                       </p>
@@ -1386,7 +1409,7 @@ const NewPricing = () => {
 
                   <div
                     id="cost-breakdown"
-                    className="text-left text-sm space-y-1 mt-4 border-t border-gray-700 pt-4 text-gray-400"
+                    className="text-left text-xs sm:text-sm space-y-1 mt-4 border-t border-gray-700 pt-4 text-gray-400"
                   ></div>
 
                   <div
@@ -1395,27 +1418,30 @@ const NewPricing = () => {
                   >
                     <div className="flex items-center">
                       <span className="text-lg mr-2">🎉</span>
-                      <span id="discount-text"></span>
+                      <span
+                        id="discount-text"
+                        className="text-xs sm:text-sm"
+                      ></span>
                     </div>
                   </div>
 
                   <div className="space-y-3 mt-6">
                     <button
                       id="primary-cta"
-                      className="w-full gradient-bg text-white font-bold py-3 px-6 rounded-lg hover:opacity-90 transition shadow-lg transform hover:scale-105"
+                      className="w-full gradient-bg text-white font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-lg hover:opacity-90 transition shadow-lg transform hover:scale-105 text-sm sm:text-base"
                     >
                       🚀 Start My Digital Transformation
                     </button>
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       <a
                         href="tel:+94772581181"
-                        className="bg-gray-700 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition text-sm inline-block"
+                        className="bg-gray-700 text-white py-1 px-2 sm:py-2 sm:px-4 rounded-md hover:bg-gray-600 transition text-xs sm:text-sm inline-block"
                       >
                         📞 Schedule Demo
                       </a>
 
                       <button
-                        className="bg-gray-700 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition text-sm"
+                        className="bg-gray-700 text-white py-1 px-2 sm:py-2 sm:px-4 rounded-md hover:bg-gray-600 transition text-xs sm:text-sm"
                         onClick={handleSaveQuote}
                       >
                         💾 Save Quote
@@ -1430,7 +1456,7 @@ const NewPricing = () => {
                   </div>
 
                   <div className="mt-4 text-center text-xs text-gray-500">
-                    <div className="flex items-center justify-center space-x-4 mt-2">
+                    <div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-1 sm:space-y-0 mt-2 text-xs sm:text-sm">
                       <span className="flex items-center">
                         <span className="w-2 h-2 bg-green-400 rounded-full mr-1"></span>
                         ISO 27001 Certified
@@ -1444,10 +1470,12 @@ const NewPricing = () => {
                 </div>
 
                 <p className="text-xs text-gray-500 mt-4 text-center">
-                  💡 This intelligent estimate is based on your specific
-                  requirements.
-                  <br />
-                  Final pricing confirmed after consultation.
+                  <span className="block text-center">
+                    💡 This intelligent estimate is based on your specific
+                    requirements.
+                    <br className="hidden sm:block" />
+                    Final pricing confirmed after consultation.
+                  </span>
                 </p>
               </div>
             </div>
