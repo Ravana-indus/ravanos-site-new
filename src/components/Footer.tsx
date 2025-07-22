@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Twitter, Linkedin, Facebook, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -25,13 +26,13 @@ const Footer = () => {
               The AI Operating System for Your Business
             </p>
             <div className="flex space-x-3 sm:space-x-4">
-              {["X", "In", "Fb", "YT"].map((icon, index) => (
+              {[Twitter, Linkedin, Facebook, Youtube].map((Icon, index) => (
                 <Link
                   key={index}
-                  to="/login"
+                  to="/"
                   className="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-colors"
                 >
-                  <span className="text-white/80 text-sm">{icon}</span>
+                  <Icon className="w-4 h-4 text-white/80" />
                 </Link>
               ))}
             </div>
