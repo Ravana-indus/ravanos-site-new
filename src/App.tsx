@@ -3,7 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
 import { Suspense, lazy } from "react";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -22,7 +22,7 @@ const ITSupport = lazy(() => import("./pages/ITSupport"));
 const Features = lazy(() => import("./pages/Features"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const NewPricing = lazy(() => import("./pages/NewPricing"));
-
+const Careers = lazy(() => import("./pages/Careers"));
 
 // Loading component
 const LoadingFallback = () => (
@@ -61,6 +61,7 @@ const App = () => (
               <Route path="/it-support" element={<ITSupport />} />
               <Route path="/features" element={<Features />} />
               <Route path="/pricing" element={<NewPricing />} />
+              <Route path="/careers" element={<Careers />} />
               {/* <Route path="/new-pricing" element={
                 <ErrorBoundary>
                   <NewPricing />

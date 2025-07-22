@@ -233,7 +233,7 @@ const EarlyAdopters = () => {
                     >
                       {isSubmitting ? 'Submitting...' : (
                         <>
-                          Apply for Early Access
+                          Contact us
                           <ArrowRight size={18} className="hidden sm:inline" />
                         </>
                       )}

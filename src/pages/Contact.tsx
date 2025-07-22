@@ -48,7 +48,7 @@ const Contact = () => {
                     Contact Sales
                   </h3>
                   <a
-                    href="mailto:sales@ravanos.com"
+                    href="mailto:info@ravanos.com"
                     className="text-ravan-accent hover:text-ravan-accent-light"
                   >
                     sales@ravanos.com
@@ -59,7 +59,7 @@ const Contact = () => {
                     Investor Relations
                   </h3>
                   <a
-                    href="mailto:invest@ravanos.com"
+                    href="mailto:info@ravanos.com"
                     className="text-ravan-accent hover:text-ravan-accent-light"
                   >
                     invest@ravanos.com
@@ -70,7 +70,7 @@ const Contact = () => {
                     Careers
                   </h3>
                   <a
-                    href="mailto:career@ravanos.com"
+                    href="mailto:info@ravanos.com"
                     className="text-ravan-accent hover:text-ravan-accent-light"
                   >
                     career@ravanos.com
@@ -89,7 +89,7 @@ const Contact = () => {
                     Sri Lanka Support
                   </h3>
                   <a
-                    href="mailto:sl@ravanaos.com"
+                    href="mailto:info@ravanaos.com"
                     className="text-ravan-accent hover:text-ravan-accent-light"
                   >
                     sl@ravanos.com
@@ -100,7 +100,7 @@ const Contact = () => {
                     Canada Support
                   </h3>
                   <a
-                    href="mailto:ca@ravanaos.com"
+                    href="mailto:info@ravanaos.com"
                     className="text-ravan-accent hover:text-ravan-accent-light"
                   >
                     ca@ravanos.com
@@ -111,7 +111,7 @@ const Contact = () => {
                     Germany Support
                   </h3>
                   <a
-                    href="mailto:de@ravanaos.com"
+                    href="mailto:info@ravanaos.com"
                     className="text-ravan-accent hover:text-ravan-accent-light"
                   >
                     de@ravanos.com

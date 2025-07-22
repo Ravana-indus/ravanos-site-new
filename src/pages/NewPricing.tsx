@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import React, { useEffect } from "react";
 import ManagedITPricing from "@/components/pricing/ManagedITPricing";
 import Footer from "@/components/Footer";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 const NewPricing = () => {
   useEffect(() => {
@@ -623,6 +625,130 @@ const NewPricing = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const menuBtnRef = React.useRef(null);
   const mobileMenuRef = React.useRef(null);
+
+  const handleSaveQuote = async () => {
+    // Capture calculator as image
+    const calculatorElement = document.getElementById("calculator");
+    if (!calculatorElement) return;
+
+    try {
+      const canvas = await html2canvas(calculatorElement, {
+        useCORS: true,
+      });
+
+      const imgData = canvas.toDataURL("image/png");
+      const doc = new jsPDF("p", "mm", "a4");
+      const imgWidth = 190;
+      const pageHeight = 297;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      let position = 10;
+
+      // Add calculator image
+      doc.addImage(imgData, "PNG", 10, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight - 30;
+
+      // Add new page if image is too long
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        doc.addPage();
+        doc.addImage(imgData, "PNG", 10, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      // Add text details
+      const detailsY = position + imgHeight + 10;
+      doc.setFontSize(12);
+      doc.text(`Generated: ${new Date().toLocaleString()}`, 10, detailsY);
+
+      // Save PDF
+      doc.save("RavanOS_Quote.pdf");
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+      alert("Failed to generate PDF. Please try again.");
+    }
+  };
+
+  const handleSaveInvoice = () => {
+    // Get values from DOM
+    const totalUpfront =
+      document.getElementById("totalUpfront")?.textContent || "LKR 0";
+    const totalMonthly =
+      document.getElementById("totalMonthly")?.textContent || "LKR 0";
+    const businessType =
+      (document.getElementById("businessType") as HTMLSelectElement)?.value ||
+      "general";
+    const employeeTier =
+      (
+        document.querySelector(
+          'input[name="employeeTier"]:checked'
+        ) as HTMLInputElement
+      )?.value || "essential";
+    const itTier =
+      (document.getElementById("itServices") as HTMLSelectElement)?.value ||
+      "none";
+    const aiAssistant =
+      (document.getElementById("aiAssistant") as HTMLInputElement)?.checked ||
+      false;
+    const customSolutions =
+      (document.getElementById("customSolutions") as HTMLInputElement)
+        ?.checked || false;
+    const monthlySavings =
+      document.getElementById("monthlySavings")?.textContent || "LKR 0";
+    const yearlySavings =
+      document.getElementById("yearlySavings")?.textContent || "LKR 0";
+    const paybackPeriod =
+      document.getElementById("paybackPeriod")?.textContent || "";
+    const roiPercentage =
+      document.getElementById("roiPercentage")?.textContent || "0%";
+
+    // Get selected modules
+    const moduleCheckboxes = document.querySelectorAll(
+      ".optional-module:checked"
+    );
+    const modules = Array.from(moduleCheckboxes).map((cb: HTMLInputElement) => {
+      const label = document.querySelector(
+        `label[for="${cb.id}"] .font-semibold`
+      );
+      return label?.textContent || "Unknown Module";
+    });
+
+    // Create PDF
+    const doc = new jsPDF();
+    doc.setFontSize(18);
+    doc.text("RavanOS Invoice", 10, 10);
+    doc.setFontSize(12);
+
+    let y = 20;
+    doc.text(`Business Type: ${businessType}`, 10, y);
+    y += 10;
+    doc.text(`Employee Tier: ${employeeTier}`, 10, y);
+    y += 10;
+    doc.text(`IT Tier: ${itTier}`, 10, y);
+    y += 10;
+    doc.text(`AI Assistant: ${aiAssistant ? "Yes" : "No"}`, 10, y);
+    y += 10;
+    doc.text(`Custom Solutions: ${customSolutions ? "Yes" : "No"}`, 10, y);
+    y += 10;
+    doc.text(`Selected Modules: ${modules.join(", ")}`, 10, y);
+    y += 10;
+    doc.text(`Total Upfront: ${totalUpfront}`, 10, y);
+    y += 10;
+    doc.text(`Total Monthly: ${totalMonthly}`, 10, y);
+    y += 10;
+    doc.text(`Monthly Savings: ${monthlySavings}`, 10, y);
+    y += 10;
+    doc.text(`Yearly Savings: ${yearlySavings}`, 10, y);
+    y += 10;
+    doc.text(`Payback Period: ${paybackPeriod}`, 10, y);
+    y += 10;
+    doc.text(`3-Year ROI: ${roiPercentage}`, 10, y);
+    y += 10;
+    doc.text(`Generated: ${new Date().toLocaleString()}`, 10, y);
+
+    // Save PDF
+    doc.save("RavanOS_Invoice.pdf");
+  };
 
   return (
     <>
@@ -1281,12 +1407,25 @@ const NewPricing = () => {
                       🚀 Start My Digital Transformation
                     </button>
                     <div className="grid grid-cols-2 gap-2">
-                      <button className="bg-gray-700 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition text-sm">
+                      <a
+                        href="tel:+94772581181"
+                        className="bg-gray-700 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition text-sm inline-block"
+                      >
                         📞 Schedule Demo
-                      </button>
-                      <button className="bg-gray-700 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition text-sm">
+                      </a>
+
+                      <button
+                        className="bg-gray-700 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition text-sm"
+                        onClick={handleSaveQuote}
+                      >
                         💾 Save Quote
                       </button>
+                      {/* <button
+                        className="bg-gray-700 text-white py-2 px-4 rounded-md hover:bg-gray-600 transition text-sm"
+                        onClick={handleSaveInvoice}
+                      >
+                        📄 Save Invoice
+                      </button> */}
                     </div>
                   </div>
 
