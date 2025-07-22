@@ -141,28 +141,6 @@ const Navbar = () => {
             Pricing
           </Link>
           <Link
-            to="/new-pricing"
-            className="nav-link text-lg py-3"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            New Pricing
-          </Link>
-          <Link
-            to="/new-pricing"
-            className="nav-link text-lg py-3"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            New Pricing
-          </Link>
-          <Link
-            to="/new-pricing"
-            className="nav-link text-lg py-3"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            New Pricing
-          </Link>
-
-          <Link
             to="/features"
             className="nav-link text-lg py-3"
             onClick={() => setIsMenuOpen(false)}
@@ -205,7 +183,7 @@ const Navbar = () => {
               className="button-primary w-full text-center flex items-center justify-center py-4"
               onClick={() => setIsMenuOpen(false)}
             >
-              Get Early Access
+              Talk with us
             </Link>
           </div>
         </div>

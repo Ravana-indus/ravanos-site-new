@@ -41,7 +41,7 @@ const EarlyAdopters = () => {
       };
       
       // Send data to Frappe backend
-      const response = await fetch('https://ravanaindustries.com/api/resource/RavanOS Early', {
+      const response = await fetch('https://erp.ravanaindustries.com/api/resource/RavanOS Early', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -85,7 +85,7 @@ const EarlyAdopters = () => {
               <div className="mb-3 inline-block px-4 py-1.5 rounded-full bg-ravan-accent/20 border border-ravan-accent/30">
                 <span className="text-sm font-medium text-white">Exclusive Access</span>
               </div>
-              <h1 className="section-title mb-4 md:mb-6">Join the <span className="text-gradient">RavanOS</span> Early Adopter Program</h1>
+              <h1 className="section-title mb-4 md:mb-6">Join the <span className="text-gradient">RavanOS</span> Family</h1>
               <p className="section-subtitle mx-auto">
                 Be among the first to harness the power of the AI Operating System for your business. 
                 Early adopters receive priority access, dedicated support, and influence on our roadmap.
