@@ -8,58 +8,6 @@ import html2canvas from "html2canvas";
 const NewPricing = () => {
   useEffect(() => {
     // JavaScript functionality from the original HTML
-    const modules = [
-      { id: "mfg", name: "Manufacturing", businessTypes: ["manufacturing"] },
-      {
-        id: "project",
-        name: "Project Mgmt.",
-        businessTypes: ["construction", "services"],
-      },
-      {
-        id: "quality",
-        name: "Quality Mgmt.",
-        businessTypes: ["manufacturing", "healthcare"],
-      },
-      {
-        id: "assets",
-        name: "Asset Mgmt.",
-        businessTypes: ["manufacturing", "construction"],
-      },
-      {
-        id: "fleet",
-        name: "Fleet Mgmt.",
-        businessTypes: ["construction", "services"],
-      },
-      {
-        id: "hospitality",
-        name: "Hospitality",
-        businessTypes: ["hospitality"],
-      },
-      { id: "education", name: "Education", businessTypes: ["education"] },
-      { id: "healthcare", name: "Healthcare", businessTypes: ["healthcare"] },
-      {
-        id: "agriculture",
-        name: "Agriculture",
-        businessTypes: ["agriculture"],
-      },
-      { id: "non_profit", name: "Non-Profit", businessTypes: ["non_profit"] },
-      {
-        id: "loyalty",
-        name: "Loyalty Program",
-        businessTypes: ["retail", "hospitality"],
-      },
-      {
-        id: "subscription",
-        name: "Subscriptions",
-        businessTypes: ["services", "retail"],
-      },
-      { id: "ecommerce", name: "E-commerce", businessTypes: ["retail"] },
-      {
-        id: "pos",
-        name: "Point of Sale",
-        businessTypes: ["retail", "hospitality"],
-      },
-    ];
 
     const businessTypeRecommendations = {
       manufacturing: {
@@ -262,6 +210,9 @@ const NewPricing = () => {
     ) as HTMLButtonElement;
 
     function renderModules() {
+      const businessTypeSelect = document.getElementById(
+        "businessType"
+      ) as HTMLSelectElement;
       const businessType = businessTypeSelect.value;
       const recommendations = businessTypeRecommendations[businessType];
 
@@ -620,11 +571,139 @@ const NewPricing = () => {
     updateIntelligentRecommendations();
     renderModules();
     calculateAndUpdate();
+    const details = collectEstimatorDetails();
+    setEstimatorDetails(details);
+    console.log("Estimator Details:", details);
   }, []);
 
+  useEffect(() => {}, []);
+
+  interface Module {
+    id: string;
+    name: string;
+    businessTypes: string[];
+  }
+
+  interface EstimatorDetails {
+    businessType: string;
+    employeeTier: string;
+    selectedModules: string[];
+    itTier: string;
+    aiAssistant: boolean;
+    customSolutions: boolean;
+    totalUpfront: string;
+    totalMonthly: string;
+    monthlySavings: string;
+    yearlySavings: string;
+    paybackPeriod: string;
+    roiPercentage: string;
+  }
+
+  const modules: Module[] = [
+    { id: "mfg", name: "Manufacturing", businessTypes: ["manufacturing"] },
+    {
+      id: "project",
+      name: "Project Mgmt.",
+      businessTypes: ["construction", "services"],
+    },
+    {
+      id: "quality",
+      name: "Quality Mgmt.",
+      businessTypes: ["manufacturing", "healthcare"],
+    },
+    {
+      id: "assets",
+      name: "Asset Mgmt.",
+      businessTypes: ["manufacturing", "construction"],
+    },
+    {
+      id: "fleet",
+      name: "Fleet Mgmt.",
+      businessTypes: ["construction", "services"],
+    },
+    {
+      id: "hospitality",
+      name: "Hospitality",
+      businessTypes: ["hospitality"],
+    },
+    { id: "education", name: "Education", businessTypes: ["education"] },
+    { id: "healthcare", name: "Healthcare", businessTypes: ["healthcare"] },
+    {
+      id: "agriculture",
+      name: "Agriculture",
+      businessTypes: ["agriculture"],
+    },
+    { id: "non_profit", name: "Non-Profit", businessTypes: ["non_profit"] },
+    {
+      id: "loyalty",
+      name: "Loyalty Program",
+      businessTypes: ["retail", "hospitality"],
+    },
+    {
+      id: "subscription",
+      name: "Subscriptions",
+      businessTypes: ["services", "retail"],
+    },
+    { id: "ecommerce", name: "E-commerce", businessTypes: ["retail"] },
+    {
+      id: "pos",
+      name: "Point of Sale",
+      businessTypes: ["retail", "hospitality"],
+    },
+  ];
+
+  const [estimatorDetails, setEstimatorDetails] =
+    React.useState<EstimatorDetails | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const menuBtnRef = React.useRef(null);
   const mobileMenuRef = React.useRef(null);
+
+  function collectEstimatorDetails() {
+    const businessTypeSelect = document.getElementById(
+      "businessType"
+    ) as HTMLSelectElement;
+    const employeeTier = (
+      document.querySelector(
+        'input[name="employeeTier"]:checked'
+      ) as HTMLInputElement
+    )?.value;
+    const itServicesSelect = document.getElementById(
+      "itServices"
+    ) as HTMLSelectElement;
+    const aiAssistantCheckbox = document.getElementById(
+      "aiAssistant"
+    ) as HTMLInputElement;
+    const customSolutionsCheckbox = document.getElementById(
+      "customSolutions"
+    ) as HTMLInputElement;
+
+    const selectedModules = Array.from(
+      document.querySelectorAll(".optional-module:checked")
+    ).map((cb: HTMLInputElement) => {
+      const id = cb.id.replace("mod-", "");
+      const module = modules.find((m) => m.id === id);
+      return module ? module.name : id;
+    });
+
+    return {
+      businessType: businessTypeSelect?.value || "",
+      employeeTier: employeeTier || "",
+      selectedModules,
+      itTier: itServicesSelect?.value || "",
+      aiAssistant: aiAssistantCheckbox?.checked || false,
+      customSolutions: customSolutionsCheckbox?.checked || false,
+      totalUpfront: document.getElementById("totalUpfront")?.textContent || "",
+      totalMonthly: document.getElementById("totalMonthly")?.textContent || "",
+      monthlySavings:
+        document.getElementById("monthlySavings")?.textContent || "",
+      yearlySavings:
+        document.getElementById("yearlySavings")?.textContent || "",
+      paybackPeriod:
+        document.getElementById("paybackPeriod")?.textContent || "",
+      roiPercentage:
+        document.getElementById("roiPercentage")?.textContent || "",
+    };
+  }
 
   const handleSaveQuote = async () => {
     // Capture calculator as image
@@ -748,6 +827,49 @@ const NewPricing = () => {
 
     // Save PDF
     doc.save("RavanOS_Invoice.pdf");
+  };
+
+  const handleClickonDigitalTransformation = () => {
+    const details = collectEstimatorDetails();
+    setEstimatorDetails(details);
+
+    const subject = encodeURIComponent(
+      "RavanOS Digital Transformation Inquiry"
+    );
+    const body = encodeURIComponent(`
+RavanOS Digital Transformation Inquiry
+
+BUSINESS INFORMATION:
+• Business Type: ${details.businessType}
+• Employee Tier: ${details.employeeTier}
+
+SELECTED MODULES:
+${details.selectedModules.map((m) => `  • ${m}`).join("\n")}
+
+SERVICES:
+• IT Services Tier: ${details.itTier}
+• AI Assistant: ${details.aiAssistant ? "Yes" : "No"}
+• Custom Solutions: ${details.customSolutions ? "Yes" : "No"}
+
+COST SUMMARY:
+• Total Upfront Cost: ${details.totalUpfront}
+• Total Monthly Cost: ${details.totalMonthly}
+• Monthly Savings: ${details.monthlySavings}
+• Yearly Savings: ${details.yearlySavings}
+• Payback Period: ${details.paybackPeriod}
+• 3-Year ROI: ${details.roiPercentage}
+
+This estimate was generated by the RavanOS Cost Estimator.
+    `);
+
+    window.location.href = `mailto:it@ravanaindustries.com?subject=${subject}&body=${body}`;
+  };
+
+  const handleGetMyCustomQuote = () => {
+    const subject = encodeURIComponent("Get My Custom Quote from RavanOS");
+    const body = encodeURIComponent(``);
+
+    window.location.href = `mailto:it@ravanaindustries.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -1313,7 +1435,10 @@ const NewPricing = () => {
                     Your unique needs deserve a tailored approach. Our experts
                     will design the perfect solution for you.
                   </p>
-                  <button className="mt-3 bg-yellow-600 text-black font-bold px-4 py-2 rounded-md hover:bg-yellow-500 transition w-full">
+                  <button
+                    onClick={handleGetMyCustomQuote}
+                    className="mt-3 bg-yellow-600 text-black font-bold px-4 py-2 rounded-md hover:bg-yellow-500 transition w-full"
+                  >
                     Get My Custom Quote →
                   </button>
                 </div>
@@ -1427,6 +1552,7 @@ const NewPricing = () => {
 
                   <div className="space-y-3 mt-6">
                     <button
+                      onClick={handleClickonDigitalTransformation}
                       id="primary-cta"
                       className="w-full gradient-bg text-white font-bold py-2 px-4 sm:py-3 sm:px-6 rounded-lg hover:opacity-90 transition shadow-lg transform hover:scale-105 text-sm sm:text-base"
                     >
@@ -1435,7 +1561,7 @@ const NewPricing = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       <a
                         href="tel:+94772581181"
-                        className="bg-gray-700 text-white py-1 px-2 sm:py-2 sm:px-4 rounded-md hover:bg-gray-600 transition text-xs sm:text-sm inline-block"
+                        className="bg-gray-700 text-white text-center py-1 px-2 sm:py-2 sm:px-4 rounded-md hover:bg-gray-600 transition text-xs sm:text-sm inline-block"
                       >
                         📞 Schedule Demo
                       </a>
