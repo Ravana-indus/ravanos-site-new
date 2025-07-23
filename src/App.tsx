@@ -51,7 +51,7 @@ const App = () => (
           <Suspense fallback={<LoadingFallback />}>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/early-adopters" element={<EarlyAdopters />} />
+              <Route path="/contact-us" element={<EarlyAdopters />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/cookies-policy" element={<CookiesPolicy />} />

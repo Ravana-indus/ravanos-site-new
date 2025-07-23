@@ -109,7 +109,7 @@ const Navbar = () => {
             >
               <LogIn size={20} />
             </Link> */}
-            <Link to="/early-adopters" className="button-primary">
+            <Link to="/contact-us" className="button-primary">
               Talk with us
             </Link>
           </div>
@@ -170,16 +170,16 @@ const Navbar = () => {
             Contact
           </Link>
           <div className="pt-4 space-y-4">
-            <Link
+            {/* <Link
               to="/login"
               className="text-white hover:text-gray-300 p-2 rounded-full hover:bg-white/10 transition-colors flex items-center space-x-2"
               onClick={() => setIsMenuOpen(false)}
             >
               <LogIn size={20} />
               <span>Login</span>
-            </Link>
+            </Link> */}
             <Link
-              to="/early-adopters"
+              to="/contact-us"
               className="button-primary w-full text-center flex items-center justify-center py-4"
               onClick={() => setIsMenuOpen(false)}
             >
