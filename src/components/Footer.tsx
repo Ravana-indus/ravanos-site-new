@@ -3,6 +3,25 @@ import { Link } from "react-router-dom";
 import { Twitter, Linkedin, Facebook, Youtube } from "lucide-react";
 
 const Footer = () => {
+  const socialLinks = [
+    {
+      Icon: Twitter,
+      href: "https://x.com/ravan_os",
+    },
+    {
+      Icon: Linkedin,
+      href: "/",
+    },
+    {
+      Icon: Facebook,
+      href: "/",
+    },
+    {
+      Icon: Youtube,
+      href: "/",
+    },
+  ];
+
   return (
     <footer className="bg-ravan-dark py-12 sm:py-16 px-4 sm:px-6 md:px-12 border-t border-white/5 relative overflow-hidden">
       {/* Background grid pattern */}
@@ -26,14 +45,16 @@ const Footer = () => {
               The AI Operating System for Your Business
             </p>
             <div className="flex space-x-3 sm:space-x-4">
-              {[Twitter, Linkedin, Facebook, Youtube].map((Icon, index) => (
-                <Link
-                  key={index}
-                  to="/"
+              {socialLinks.map(({ Icon, href }, idx) => (
+                <a
+                  key={idx}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-colors"
                 >
                   <Icon className="w-4 h-4 text-white/80" />
-                </Link>
+                </a>
               ))}
             </div>
           </div>
